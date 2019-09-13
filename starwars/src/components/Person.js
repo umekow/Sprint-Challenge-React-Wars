@@ -18,10 +18,13 @@ accent:#33E6AC
 const Card = styled.div`
     backgound:#AC7123
 
+    ul{
+        list-style-type:none;
+    }
+
 `
 
 const Person = (props) => {
-
     return(
         <Card>
             <Header 
@@ -35,14 +38,10 @@ const Person = (props) => {
                
                 {
                     props.films.map(film => {
-
-                        axios.get(film).then(response =>{
-                            console.log(response)
-                        })
                         return(
-                        <li>{film.title}</li>)
-                    }) 
-                }
+                        <li>{film}</li>)
+                        
+                })}
 
             </ul>
 
