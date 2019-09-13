@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import Header from './Header'
+import axios from 'axios'
 
 /*
 color theme:
@@ -31,12 +32,16 @@ const Person = (props) => {
             <p><span>Gender: </span>{props.gender}</p>
             <h5>Films</h5>
             <ul>
-                //iterate through array and list each film title
-                {/*
-                    films.map(film => {
+               
+                {
+                    props.films.map(film => {
+
+                        axios.get(film).then(response =>{
+                            console.log(response)
+                        })
                         return(
                         <li>{film.title}</li>)
-                    }) */
+                    }) 
                 }
 
             </ul>
